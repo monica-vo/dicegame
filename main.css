@@ -1,13 +1,39 @@
 
 
 body {
-    background-color:white;
+    background-color:#FFE361;
+    color: slategray;
+  /* margin-top: 4vh; */
+    text-align: center;
+    padding: 1vh;
+
+}
+
+    .content{
+    display: flex;
+    flex-wrap: wrap;
+   /* justify-content: space-between; */
+   align-items: center;
+   height: 60vh;
+   justify-content: center;
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+   background-color: white; 
+   border-radius: 0px;
+   margin-left: 2vh;
+   margin-right: 2vh;
+   border-radius: 1vh;
+
+   
+}
+
+.container{
+    padding: 7vh;
 }
 
 header{
     margin-top: 4vh;
     text-align: center;
-    color: slategray;
+    
 }
 
 #title{
@@ -18,116 +44,129 @@ header{
     font-size: 4vh;
 }
 
-.container{
-    display: flex;
-    padding: 1vh;
-    flex-direction: row;
-    min-height: 50vh;
-    flex-wrap: wrap;
-    justify-content: center;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    background-color: lightgrey; 
-    border-radius: 0px; 
-    margin: 3vh;
+#instruc{
+    margin-top: 7vh;
+    font-size: 3vh; 
 }
+
+#turns{
+    font-size: 7vh;
+    margin-top: 5vh;
+}
+
+.div1{
+    order:1;
+    
+}
+
+.div2{
+    order:2;
+}
+
+.div3{
+    order:3;
+    
+}
+
+.buttons{
+    order:4;
+    /* padding: 0%; */
+    margin-top: 0%;
+    padding: 5vh;
+    
+}
+
+
     .box{
-        width: 50vh;
-        font-size: 10vh;
-        color: white;
-        text-align: center;
+    width: 50vh;
+    font-size: 7vh;
+    color: white;
+    text-align: center;
     }
 
-    .box1{
-        background-color: yellowgreen;
-        
-    }
-
-    .box2{
-        background-color: lightseagreen;
-    }
 
     button{
-        height: 15vh;
-        width: 25vh;
-        padding: 5vh;
-        border-radius: 7vh;
-        color: slategray;
-        text-align: center;
-        /* margin-left: 95vh; */
-        background: rgb(243, 227, 83);
-        -ms-transform: translateY(15vh);
-         -webkit-transform: translateY(9vh);
-         transform: translateY(3vh);
-        margin-top: 3vh;
-        margin-bottom: 5vh;
-        font-size: 5vh;
-        
+    height: 10vh;
+    width: 25vh;
+    border-radius: 1vh;
+    color: slategray;
+    text-align: center;
+    /* background: rgb(243, 227, 83); */
+    background: 	#f7af5e ;
+    font-size: 4vh;        
+    box-shadow: 0 4px #665;  
+    }
+
+    button:active{
+    box-shadow: 4 4px  #999;
+    transform: translateY(4px);
     }
 
     #view{
         /* all this gives the parametres for the depth of the cube*/
     width:200px;
     height:200px;
-    margin:100px;
+    margin:50px;
     perspective:600px; /*this gives depth to the cube */
     }
     #dice{
-    width:200px;
-    height:200px;
+    width:100%;
+    height:100%;
     position:relative;
     transform-style:preserve-3d; /*this shows the 6 faces of the cube, otherwise only a plain square*/
     transition: transform 1s; /*this is the speed the cube rotates*/
     }
 
     /*
-    /*Below the settings for the cube to rotate but now it is controlled from js*/
-    /* #btnFront ~ #view>#dice{
+    /*Below the settings for the cube to rotate*/
+    #btnFront ~ #view>#dice{
     transform:rotateY(360deg) !important;
     /* 5*/
-    /* }
+    }
     #btnRight ~ #view>#dice{
-    transform:rotateY(-90deg) !important; */
+    transform:rotateY(-90deg) !important;
         /* 2*/
-/* 
+
     }
     #btnBack ~ #view>#dice{
-    transform:rotateY(180deg) !important; */
+    transform:rotateY(180deg) !important;
         /* 3*/
 
-    /* }
+    }
     #btnLeft ~ #view>#dice{
-    transform:rotateY(90deg) !important; */
+    transform:rotateY(90deg) !important;
         /* 4*/
 
-    /* }
+    }
     #btnTop ~ #view>#dice{
-    transform:rotateX(-90deg) !important; */
+    transform:rotateX(-90deg) !important;
         /* 1*/
 
-    /* }
+    }
     #btnBottom ~ #view>#dice{
-    transform:rotateX(90deg) !important; */
+    transform:rotateX(90deg) !important;
         /* 6*/
 
-    /* } */ 
+    }
 
     /*Below the style of the cube*/
     .diceFace{
     position:absolute;
-    width:200px;
     height:200px;
     text-align:center;
     line-height:200px;
     font-size:45px;
     border:5px solid rgba(0, 0, 0, 0.61);
     border-radius: 2vh;
+    width: 100%;
+
     }
     #front{
     /* background-color:rgba(0,255,255,0.8); */
     transform:rotateY(0deg) translateZ(100px);
     background-image: url("img/dice5.png");
     background-size: cover; 
-
+    width: 100%;
     opacity: 0.8;
     filter: alpha(opacity=50);
     }
@@ -137,6 +176,8 @@ header{
     background-image: url("img/dice2.png");
     opacity: 0.8;
     filter: alpha(opacity=50);
+    width: 100%;
+
     }
     #back{
     /* background-color:rgba(255,255,0,0.8); */
@@ -144,12 +185,15 @@ header{
     background-image: url("img/dice3.png");
     opacity: 0.8;
     filter: alpha(opacity=50);
+    width: 100%;
+
     }
     #left{
     /* background-color:rgba(255,0,255,0.8); */
     transform:rotateY(-90deg) translateZ(100px);
     background-image: url("img/dice4.png");
     background-size: cover; 
+    width: 100%;
 
     opacity: 0.8;
     filter: alpha(opacity=50);
@@ -159,6 +203,7 @@ header{
     transform:rotateX(90deg) translateZ(100px);
     background-image: url("img/dice1.png");
     background-size: cover; 
+    width: 100%;
 
     opacity: 0.8;
     filter: alpha(opacity=50);
@@ -169,24 +214,8 @@ header{
     background-image: url("img/dice6.png");
     opacity: 0.8;
     filter: alpha(opacity=50);
+    width: 100%;
     }
-
-
-    /* below box span and test don't seem to change anything  */
-    /* span{
-    display:inline-block;
-    padding:4px 10px;
-    margin:3px;
-    background-color:#0aa;
-    border:2px inset #dd0
-    } */
-    
-    
-    /* #test:checked + #test2{
-    display:block;
-    width:80px;
-    background-color:#0aa;
-    } */
 
     /* below the settings for the click input but not the actions*/
     input[type="radio"]{
@@ -194,5 +223,10 @@ header{
     margin:10px;
     }
 
+    @media screen and (max-width: 800px) {
+        .body {
+          width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+        }
+      }
    
     

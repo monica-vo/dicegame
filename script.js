@@ -11,7 +11,10 @@ let result = 0;
 let count = 0;
 let score;
 
-box.style.visibility = "hidden";
+// box.style.visibility = "hidden";
+document.getElementById("cont").style.color = "slategray";
+
+score1.textContent = `Have Fun!`;
 
 //FUNCTION TO ROLL THE DICE
 const play = () => {
@@ -19,9 +22,9 @@ const play = () => {
         case 1:
             box.style.transform = "rotateX(-90deg)";
             console.log("uno")
-            window.setTimeout(() => {
-                box.style.visibility = "hidden";
-            }, 1000);
+            // window.setTimeout(() => {
+            //     box.style.visibility = "hidden";
+            // }, 1000);
             break;
         case 2:
             box.style.transform = "rotateY(-90deg)";
@@ -47,18 +50,22 @@ const play = () => {
 
 btn1.addEventListener('click', () => {
     box.style.visibility = "visible";
-    box.style.transform = "rotateY(90deg)";
-    
+    document.getElementById("cont").style.color = "slategray";
+    document.getElementById("click").play(); 
     play()
     // counter -= 1;
     result += score;
-    score1.textContent = `Points: ${score}`;
-    total1.textContent = `Total: ${result}`;
+    score1.textContent = `Score ${score}`;
+    total1.textContent = `Total ${result}`;
     console.log(`this is the result ${result}`);
 
-    if (result >= 12) {
+
+    if (result >= 15) {
+        document.getElementById("win").play(); 
         document.getElementById("turns").textContent = `You win`;
-        document.getElementById("turns").style.color = `lightseagreen`;
+        document.getElementById("turns").style.color = `#99CD4E`;
+        document.getElementById("turns").style.fontSize = `14vh`;
+
         btn1.style.visibility = 'hidden';
         score = 0;
         result = 0;
@@ -67,23 +74,36 @@ btn1.addEventListener('click', () => {
 
     else if (score == 1) {
         total1.textContent = "You lose";
+        document.getElementById("gameover").play(); 
+
         document.getElementById("cont").style.color = "red";
-        btn1.style.visibility = 'hidden'
+        btn1.style.visibility = 'hidden';
         score = 0;
         result = 0;
         document.getElementById("turns").textContent = `Game Over`;
+        document.getElementById("turns").style.color = "red";
+        document.getElementById("turns").style.fontSize = `12vh`;
+
     }
 })
 
 btn2.addEventListener('click', () => {
+    document.getElementById("click").play(); 
     score = 0;
     result = 0;
+    box.style.visibility = "hidden";
     btn1.style.visibility = "visible";
-    document.getElementById("cont").style.color = "white";
-    document.getElementById("turns").style.color = `white`;
     document.getElementById("turns").textContent = ``;
-    score1.textContent = `Points: ${score}`;
-    total1.textContent = `Total: ${result}`;
+    score1.textContent = `Score ${score}`;
+    total1.textContent = `Total ${result}`;
+    document.getElementById("turns").textContent = `Roll the dice`;
+    document.getElementById("turns").style.fontSize = `7vh`;
+    document.getElementById("turns").style.color = `slategray`; 
+    document.getElementById("cont").style.color = "slategray";
+    score1.textContent = `Have Fun!`;
+    total1.textContent = ``;
+
+
 })
 
 
@@ -99,10 +119,7 @@ btn2.addEventListener('click', () => {
 //         score2.textContent = "You win";
 
 
-//         window.setTimeout(()=>{
-//          box.style.visibility="hidden";
-//          total2.style.visibility="hidden";
-//          }, 1000);
+//        
 
 //     }
 //     else if(score == 1){

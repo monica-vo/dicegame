@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="main.css">
     <meta charset="UTF-8">
@@ -7,30 +8,56 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
-    <header>
-            <div id="title">DICE GAME</div>
-            <dive id="subtitle">by Monica VO</dive>
-    </header>
-    <div class="container">
-        <div class="box box1" id="cont"> Player 1<div id="score1">Score</div><div id="total1">Total</div><div id="turns"> </div></div>
-            
-            
-            <div id="view">
-                <div id="dice"> 
-                    <div class="diceFace" id="front"></div>
-                    <div class="diceFace" id="right"></div>
-                    <div class="diceFace" id="back"></div>
-                    <div class="diceFace" id="left"></div>
-                    <div class="diceFace" id="top"></div>
-                    <div class="diceFace" id="bottom"></div>
-                </div>
-            </div>
-    
-    </div>
-    <button id="btn1" >Play</button>
-    <button id="btn2">Restart</button>
 
+<body>
+    <div id="title">DICE GAME <div id="subtitle">by Monica VO</div>
+    </div>
+    <div class="content">
+        <div class="div1">
+            <div id="instruc">
+                <div id="turns">Roll the dice</div>
+                <h3>Instructions</h3>
+                <p>Roll the dice to add 15 points <br>but if the dice scores 1 you lose!</p>
+            </div>
+            <!--game over or win sign -->
+        </div>
+        <div class="div2">
+            <div class="container">
+                <div id="view">
+                    <div id="dice">
+                        <div class="diceFace" id="front"></div>
+                        <div class="diceFace" id="right"></div>
+                        <div class="diceFace" id="back"></div>
+                        <div class="diceFace" id="left"></div>
+                        <div class="diceFace" id="top"></div>
+                        <div class="diceFace" id="bottom"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="div3">
+            <div class="box box1" id="cont">
+                <div id="score1"></div>
+                <div id="total1"></div>
+            </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="btn1">Play</button>
+        <button id="btn2">Restart</button>
+    </div>
+    <audio id="click">
+        <source src="click.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="gameover">
+        <source src="gameover.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="win">
+        <source src="win.mp3" type="audio/mpeg">
+    </audio>
     <script src="script.js"></script>
+
 </body>
+
 </html>
